@@ -11,21 +11,32 @@ chinese_surnames <- str_trim(scan("data/race_pred/quan_chinese_surnames.txt", wh
 
 ## IDENTIFY HIGH-PROBABILITY CHINESE VOTERS ----
 
-asi_threshold <- 0.9 # set probability threshold of being Asian to 90%
+asi_threshold <- 0.9 # set probability threshold of being Asian
 
-voters_pred |> 
-  filter((pred.asi > asi_threshold) & (political_party != "DEM"))
-
-# high-probability asian voters with a matched chinese surname
-# who have a telephone number or email address in the data
-chinese_dems <- voters_pred |> 
+# filter for matched chinese surname
+# with telephone number or email address
+# NOT registered dem
+chinese_non_dems <- voters_pred %>% 
   filter(((pred.asi > asi_threshold) 
           & (political_party != "DEM") 
           & (surname %in% chinese_surnames))
          & (!is.na(telephone_optional) | !is.na(email_address)))
 
+# registered dem
+chinese_dems <- voters_pred %>% 
+  filter(((pred.asi > asi_threshold) 
+          & (political_party == "DEM") 
+          & (surname %in% chinese_surnames))
+         & (!is.na(telephone_optional) | !is.na(email_address)))
+
 ## OUTPUT ----
 
-chinese_dems |> 
-  select(!c(state, county, tract, block, latitude, longitude, starts_with("pred"))) |> 
-  write_csv("data/race_pred/chinese_voters.csv")
+chinese_non_dems %>% 
+  select(!c(state, county, tract, block, latitude, longitude, starts_with("pred"))) %>% 
+  write_csv("data/race_pred/chinese_non_dem_voters.csv")
+# 24,685 voters
+
+chinese_dems %>% 
+  select(!c(state, county, tract, block, latitude, longitude, starts_with("pred"))) %>% 
+  write_csv("data/race_pred/chinese_dem_voters.csv")
+# 26,624 voters
