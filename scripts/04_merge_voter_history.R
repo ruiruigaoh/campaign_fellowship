@@ -9,7 +9,7 @@ library(vroom)
 voter_history <- vroom("data/voting_history_primarycount20to23.csv", delim = ",")
 
 # voter file record with predicted races
-voter_demogs <- vroom("data/race_pred/pred_voters_for_erin.csv", delim = "\t")
+voter_demos <- vroom("data/race_pred/pred_voters_for_erin.csv", delim = "\t")
 
 ## DATA PROCESSING ----
 
