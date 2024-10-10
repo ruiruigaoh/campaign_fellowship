@@ -6,7 +6,7 @@ The scope of the project was divided into two main objectives:
 
 1) **Enhance the campaign's outreach strategies** by predicting a voter's ethnicity based on their geographic location and surname, and then producing voter lists for the marketing team for targeted outreach strategies by segmenting voters based on various demographic factors (race, political party, voting history). The tool used to perform the racial category prediction is the [wru](https://github.com/kosukeimai/wru) package from Imai et al., which implements the Bayesian prediction methods proposed in their 2016 _Political Analysis_ paper. 
 
-2) Develop a **data-driven canvassing strategy** to optimize ballot access signature collection efforts by identifying areas and neighborhoods in Queens with the **highest target voter density** so that volunteers can be most effectively deployed in canvassing efforts.
+2) Develop a **data-driven canvassing strategy** to optimize ballot access signature collection efforts by identifying areas and neighborhoods in Queens with the **highest target voter density** so that volunteers can be most effectively deployed to these areas in canvassing efforts. As a result of my analysis, the campaign was able to collect **15K signatures**, surpassing the target by **275%**, and securing the candidate's place on the ballot in the primary election. 
 
 ---
 
