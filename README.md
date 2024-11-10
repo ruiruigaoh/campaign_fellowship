@@ -1,4 +1,4 @@
-# Maximizing success in a historical political race: data-driven digital marketing and canvassing
+# Maximizing success in a historical judicial race: data-driven digital marketing and canvassing
 
 From January to May of 2024, I leveraged my analytical and technical skills by working as a data analyst on a local grassroots judicial campaign in Queens, NY, leading up to the June 2024 Democratic primary election. The candidate, [Judge Wendy Li](https://www.voteforwendyli.com/), was running in a competitive election for the position of Surrogate's Court Judge in Queens. Her win was posed to be historic and would have been the first time a woman and minority occupied this seat in New York. 
 
